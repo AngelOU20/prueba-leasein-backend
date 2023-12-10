@@ -10,6 +10,7 @@ class ClienteController extends Controller
 {
     public function equiposAlquilados($nombre)
     {
+        $nombre = str_replace('_', ' ', $nombre);
         $cliente = DB::table('Vista_Reporte')->where('Nombre_Cliente', $nombre)->get();
 
         if ($cliente->isEmpty()) {
